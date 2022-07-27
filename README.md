@@ -19,11 +19,15 @@ shipment_delivery_optimization = pyd.Daisi("soul0101/Shipment Delivery Optimizat
 [depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities] = shipment_delivery_optimization.get_dummy_data().value
 
 # Plot locations of Drops and Depots
-before_fig = shipment_delivery_optimization.get_locations_plot_plotly(depot_locations, drop_locations, depot_ids=depot_ids, drop_ids=drop_ids, depot_capacities=depot_capacities).value
+before_fig = shipment_delivery_optimization.get_locations_plot_plotly(depot_locations, drop_locations, 
+                                                        depot_ids=depot_ids, drop_ids=drop_ids, 
+                                                        depot_capacities=depot_capacities).value
 before_fig.show()
 
 # Get Drop allocations for each Depot
-allocation_results = shipment_delivery_optimization.get_allocations(depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities).value
+allocation_results = shipment_delivery_optimization.get_allocations(depot_locations, drop_locations, 
+                                                        depot_ids, drop_ids, depot_capacities).value
+
 allocation_fig = shipment_delivery_optimization.get_allocations_plot_plotly(allocation_results).value
 
 # Generating mock vehicle_capacities_list
@@ -41,7 +45,11 @@ sb_first_sol = "AUTOMATIC"
 sb_local_mh = "AUTOMATIC"
 
 # Parallel Computation
-routing_results = shipment_delivery_optimization.run_parallel_route_solver(allocation_results, vehicle_capacities_list, search_timeout=search_timeout, first_sol_strategy=sb_first_sol, ls_metaheuristic=sb_local_mh).value
+routing_results = shipment_delivery_optimization.run_parallel_route_solver(allocation_results, 
+                                                                vehicle_capacities_list, 
+                                                                search_timeout=search_timeout, 
+                                                                first_sol_strategy=sb_first_sol, 
+                                                                ls_metaheuristic=sb_local_mh).value
                    
 # Serial Computation
 # routing_results = shipment_delivery_optimization.run_serial_route_solver(allocation_results, vehicle_capacities_list, search_timeout=search_timeout, first_sol_strategy=sb_first_sol, ls_metaheuristic=sb_local_mh).value
@@ -49,9 +57,10 @@ routing_results = shipment_delivery_optimization.run_parallel_route_solver(alloc
 # Generate result plots    
 route_fig = None
 for route in routing_results:
-    route_fig = shipment_delivery_optimization.get_route_plot_plotly(depot_locations, drop_locations, route, fig=route_fig).value
+    route_fig = shipment_delivery_optimization.get_route_plot_plotly(depot_locations, 
+                                                                drop_locations, route, 
+                                                                fig=route_fig).value
 
 allocation_fig.show()
 route_fig.show()
-
 ```
