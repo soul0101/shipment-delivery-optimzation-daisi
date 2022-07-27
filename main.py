@@ -422,7 +422,7 @@ def get_locations_plot_plotly(depot_locations, drop_locations, depot_ids = None,
 
 ################################## UI ##############################################
 
-def read_data():
+def get_dummy_data():
     df_depots = pd.read_csv('./data/city_depots1.csv')
     df_drops = pd.read_csv('./data/city_drops1.csv')
 
@@ -499,7 +499,7 @@ def st_ui():
         """
     )
     
-    [depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities] = read_data()
+    [depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities] = get_dummy_data()
 
     st.header("Locations")
     before_fig = get_locations_plot_plotly(depot_locations, drop_locations, depot_ids=depot_ids, drop_ids=drop_ids, depot_capacities=depot_capacities)
