@@ -438,7 +438,7 @@ def st_sidebar():
                     # Computation Settings
                     ------------------------
                     """)
-    run_parallel = st.sidebar.checkbox("Enable Parallel Computations (Alpha Stage)", help="Run the expensive route calculations parallely with multiple workers")
+    run_parallel = st.sidebar.checkbox("Enable Parallel Computations (Alpha Stage)", help="Run the expensive route calculations parallely with multiple workers", value=True)
 
     st.sidebar.markdown("""
                         # Vehicle Routing Settings
