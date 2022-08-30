@@ -423,6 +423,23 @@ def get_locations_plot_plotly(depot_locations, drop_locations, depot_ids = None,
 ################################## UI ##############################################
 
 def get_dummy_data():
+    """
+    Returns dummy data for tests
+
+    Returns
+    ----------
+    depot_locations: 
+        A list of tuples containing the (latitude, longitude) of each depot.
+    drop_locations: 
+        A list of tuples containing the (latitude, longitude) of each drop location.
+    depot_ids: 
+        A list of integers containing the id of each depot.
+    drop_ids: 
+        A list of integers containing the id of each drop location.
+    depot_capacities: 
+        A list of integers representing the maximum number of packages that can be allocated to each depot.
+    """
+
     df_depots = pd.read_csv('./data/city_depots1.csv')
     df_drops = pd.read_csv('./data/city_drops1.csv')
 
@@ -431,7 +448,7 @@ def get_dummy_data():
     depot_capacities = df_depots['Depot Capacity']
     depot_ids = df_depots['Depot ID']
     drop_ids = df_drops['Drop ID']
-    return [depots, drops, depot_ids, drop_ids, depot_capacities]
+    return depots, drops, depot_ids, drop_ids, depot_capacities
 
 def st_sidebar():
     st.sidebar.markdown("""
@@ -499,7 +516,7 @@ def st_ui():
         """
     )
     
-    [depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities] = get_dummy_data()
+    depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities = get_dummy_data()
 
     st.header("Locations")
     before_fig = get_locations_plot_plotly(depot_locations, drop_locations, depot_ids=depot_ids, drop_ids=drop_ids, depot_capacities=depot_capacities)
