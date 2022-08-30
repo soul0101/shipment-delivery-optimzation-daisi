@@ -133,7 +133,6 @@ def run_serial_route_solver(allocation_results, vehicle_capacities_list, st_prog
 
     return routing_results
 
-@st.cache
 def get_route(task, vehicle_capacities, **kwargs):
     """
     Calls 'soul0101/Vehicle Routing Problem' daisi to run the Optimal Route Calculator
@@ -455,7 +454,7 @@ def st_sidebar():
                     # Computation Settings
                     ------------------------
                     """)
-    run_parallel = st.sidebar.checkbox("Enable Parallel Computations (Alpha Stage)", help="Run the expensive route calculations parallely with multiple workers", value=True)
+    run_parallel = st.sidebar.checkbox("Enable Parallel Computations (Alpha Stage)", help="Run the expensive route calculations parallely with multiple workers", value=False)
 
     st.sidebar.markdown("""
                         # Vehicle Routing Settings
