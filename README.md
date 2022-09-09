@@ -16,7 +16,7 @@ import math
 shipment_delivery_optimization = pyd.Daisi("soul0101/Shipment Delivery Optimization")
 
 # Load dummy data
-[depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities] = shipment_delivery_optimization.get_dummy_data().value
+depot_locations, drop_locations, depot_ids, drop_ids, depot_capacities = shipment_delivery_optimization.get_dummy_data().value
 
 # Plot locations of Drops and Depots
 before_fig = shipment_delivery_optimization.get_locations_plot_plotly(depot_locations, drop_locations, 
