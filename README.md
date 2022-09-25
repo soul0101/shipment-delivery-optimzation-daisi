@@ -1,10 +1,15 @@
-# Shipment Delivery Optimzation Daisi
+# Shipment Delivery Optimzation Daisi - [Live App](https://app.daisi.io/daisies/soul0101/Shipment%20Delivery%20Optimization/app)
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/53980340/192162625-dc3a7ac9-1df6-4e45-b4ab-ba165da3f4bf.png" alt="Logo" width="700">        
+</p>
+
 
 **_NOTE:_** This daisi aims to demonstrate daisi-chaining and also the parallel executions of expensive daisi calls. 
 
 Consider a scenario where a delivery company wants to deliver packages (__drops__) all across the city with the help of 
-fulfillment centres (__depots__) at strategic locations. \n
-Each depot has a pre-defined __number of vehicles__ with certain package carrying __capacity__. \n
+fulfillment centres (__depots__) at strategic locations. <br>
+Each depot has a pre-defined __number of vehicles__ with certain package carrying __capacity__. <br>
 Our job is to __allocate__ the drops to a service centre and generate __planned routes__ for each vehicle with the objective of __minimizing cost__ (distance travelled).
 
 ## Test API Call
