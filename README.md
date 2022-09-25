@@ -1,7 +1,7 @@
 # Shipment Delivery Optimzation Daisi - [Live App](https://app.daisi.io/daisies/soul0101/Shipment%20Delivery%20Optimization/app)
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/53980340/192162625-dc3a7ac9-1df6-4e45-b4ab-ba165da3f4bf.png" alt="Logo" width="700">        
+    <img src="https://user-images.githubusercontent.com/53980340/192162625-dc3a7ac9-1df6-4e45-b4ab-ba165da3f4bf.png" alt="Logo" width="500">        
 </p>
 
 
